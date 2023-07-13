@@ -34,5 +34,12 @@ public class Homepage {
     @FindBy(xpath = "(//*[@class='woocommerce-LoopProduct-link'])[1]")
     public WebElement firstArrivals;
 
+    //MyAccount-LoginPage
+    //************************************************************************
+    @FindBy(xpath = "//*[.='My Account']")
+    public WebElement myAccountButtonHome;
+
+
+
 
 }
