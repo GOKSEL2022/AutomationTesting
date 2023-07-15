@@ -26,4 +26,7 @@ public class ShopPage {
 
     @FindBy(xpath = "//*[@id='content']")
     public WebElement androidProductImageShop;
+
+    @FindBy(xpath = "//*[@name='orderby']")
+    public WebElement defaultSortingDropDownShop;
 }
