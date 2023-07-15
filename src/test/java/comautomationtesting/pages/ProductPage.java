@@ -43,6 +43,9 @@ public class ProductPage {
     @FindBy(xpath = "//i[@class='wpmenucart-icon-shopping-cart-0']")
     public WebElement itemsBasketMenu;
 
+    @FindBy(xpath = "//*[@class='price']")
+    public WebElement textPriceSaleProduct;
+
 
 
 

@@ -29,4 +29,16 @@ public class ShopPage {
 
     @FindBy(xpath = "//*[@name='orderby']")
     public WebElement defaultSortingDropDownShop;
+
+    @FindBy(xpath = "//*[@data-product_id='169']")
+    public WebElement addToBasketButtonAndroidQickStartShop;
+
+    @FindBy(xpath = "//*[@class='added_to_cart wc-forward']")
+    public WebElement vievBasketButtonAndroidQickStartShop;
+
+    @FindBy(xpath = "//*[.='Android Quick Start Guide']")
+    public WebElement androidQickStartQideShop;
+
+    @FindBy(xpath = "(//span[@class='onsale'])[1]")
+    public WebElement saleButtonShop;
 }
