@@ -55,5 +55,11 @@ public class BasketPage {
     @FindBy(xpath = "//*[@class='cart-subtotal']")
     public WebElement subtotalPriceBasket;
 
+    @FindBy(xpath = "//*[@data-product_id='169']")
+    public WebElement removeProductButtonBasket;
+    @FindBy(xpath = "//*[@class='cart-empty']")
+    public WebElement textEmptyBasket;
+
+
 
 }
