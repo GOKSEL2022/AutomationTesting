@@ -39,5 +39,8 @@ public class MyAccountPage {
     @FindBy(xpath = "//*[@class='woocommerce-error']")
     public WebElement textErrorEmptyMessageMyAccount;
 
+    @FindBy(xpath = "//*[.='Dashboard']")
+    public WebElement dashboardButtonMyAccount;
+
 
 }
