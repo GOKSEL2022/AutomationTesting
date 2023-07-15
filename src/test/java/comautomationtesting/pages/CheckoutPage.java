@@ -41,7 +41,7 @@ public class CheckoutPage {
     public WebElement phoneNameCheckout;
 
     @FindBy(xpath = "(//*[@class='select2-input'])[2]")
-    public WebElement countryDropdownCheckout;
+    public WebElement countryDropdown2Checkout;
 
     @FindBy(xpath = "//*[@name='billing_address_1']")
     public WebElement address1Checkout;
@@ -69,6 +69,15 @@ public class CheckoutPage {
 
     @FindBy(xpath = "//*[.='Order Details']")
     public WebElement textOrderDetailsCheckout;
+
+    @FindBy(xpath = "(//*[@id='select2-drop-mask")
+    public WebElement countryDropDown1Checkout;
+
+    @FindBy(xpath = "//*[@class='cart-subtotal']")
+    public WebElement subtoltalPriceAndTextCheckout;
+
+    @FindBy(xpath = "tax-rate tax-rate-in-tax-1")
+    public WebElement taxPriceAndTextCheckout;
 }
 
 
