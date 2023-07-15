@@ -30,6 +30,7 @@ public class TC18_BasketItemsCheckoutPaymentGatewayPlaceOrder {
         ReusableMethods.clickWithJS(homepage.shopButton);
         Reporter.log("Shop butona tiklanir");
         //4) Now click on Home menu button
+        //4) Now click on Home menu button
         Driver.getDriver().navigate().refresh();
         ReusableMethods.clickWithJS(homepage.shopButton);
         ReusableMethods.clickWithJS(homepage.homeButton);
