@@ -41,4 +41,10 @@ public class ShopPage {
 
     @FindBy(xpath = "(//span[@class='onsale'])[1]")
     public WebElement saleButtonShop;
+
+    @FindBy(xpath = "(//*[@class='price'])[1]")
+    public WebElement textPriceShop;
+
+    @FindBy(xpath = "//*[@class='wpmenucart-icon-shopping-cart-0']")
+    public WebElement itemButtonShop;
 }

@@ -10,7 +10,7 @@ import comautomationtesting.utilities.ReusableMethods;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC340_Shop09_SaleFunctionality {
+public class TC40_Shop09_SaleFunctionality {
     Homepage homepage = new Homepage();
     ShopPage shopPage=new ShopPage();
     BasketPage basketPage=new BasketPage();
