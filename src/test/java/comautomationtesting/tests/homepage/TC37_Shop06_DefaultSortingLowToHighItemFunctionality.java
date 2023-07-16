@@ -28,5 +28,6 @@ public class TC37_Shop06_DefaultSortingLowToHighItemFunctionality {
         select.selectByVisibleText("Sort by price: low to high");
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("orderby=price"));
 
+        Driver.closeDriver();
     }
 }

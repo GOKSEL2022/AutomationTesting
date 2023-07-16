@@ -26,5 +26,6 @@ public class TC33_Shop02_ProductCategoriesFunctionality {
         Assert.assertTrue(shopPage.androidProductImageShop.isDisplayed());
         Thread.sleep(1000);
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("android"));
+        Driver.closeDriver();
     }
 }

@@ -27,5 +27,7 @@ public class TC35_Shop04_DefaultSortingAverageFunctionality {
         Select select =new Select(shopPage.defaultSortingDropDownShop);
         select.selectByVisibleText("Sort by average rating");
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("orderby=rating"));
+
+        Driver.closeDriver();
     }
 }

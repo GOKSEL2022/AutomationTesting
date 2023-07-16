@@ -29,6 +29,7 @@ public class TC23_Login05_EmptyUsernameAndEmptyPassword {
         myAccountPage.loginButtonLoginMyAccount.click();
         //7) Proper error must be displayed(ie required username) and prompt to enter login agai
         Assert.assertTrue(myAccountPage.textErrorMessageMyAccount.getText().contains(" Username is required."));
+        Driver.closeDriver();
 
     }
 }

@@ -78,6 +78,12 @@ public class CheckoutPage {
 
     @FindBy(xpath = "tax-rate tax-rate-in-tax-1")
     public WebElement taxPriceAndTextCheckout;
+
+    @FindBy(xpath = "(//*[.='Customer Details'])[1]")
+    public WebElement textCustomerDetailsCheckout;
+
+    @FindBy(xpath = "(//*[.='Billing Address'])[1]")
+    public WebElement textBillingAddressCheckout;
 }
 
 

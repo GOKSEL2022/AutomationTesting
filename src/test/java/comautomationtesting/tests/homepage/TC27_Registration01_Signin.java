@@ -38,5 +38,6 @@ public class TC27_Registration01_Signin {
         Driver.getDriver().navigate().to(ConfigurationReader.getProperty("au_url"));
         ReusableMethods.scrollIntoViewJS(homepage.firstArrivals);
         Assert.assertTrue(homepage.firstArrivals.isDisplayed());
+        Driver.closeDriver();
     }
 }

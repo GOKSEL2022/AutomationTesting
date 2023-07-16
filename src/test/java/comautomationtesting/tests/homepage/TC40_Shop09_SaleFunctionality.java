@@ -30,5 +30,7 @@ public class TC40_Shop09_SaleFunctionality {
         //5) User can clearly view the actual price with old price striken for the sale written products
         Assert.assertTrue(productPage.textPriceSaleProduct.getText().contains("600.00"));
         Assert.assertTrue(productPage.textPriceSaleProduct.getText().contains("450.00"));
+
+        Driver.closeDriver();
     }
 }

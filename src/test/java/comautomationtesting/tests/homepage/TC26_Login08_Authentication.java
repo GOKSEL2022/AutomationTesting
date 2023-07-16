@@ -33,5 +33,6 @@ public class TC26_Login08_Authentication {
         Driver.getDriver().navigate().back();
         //9) User shouldn’t be signed in to his account rather a general webpage must be visible
         Assert.assertTrue(myAccountPage.textBoxUsernameLoginMyAccount.isDisplayed());
+        Driver.closeDriver();
     }
 }

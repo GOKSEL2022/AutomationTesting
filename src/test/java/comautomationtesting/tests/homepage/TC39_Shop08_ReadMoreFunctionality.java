@@ -30,5 +30,6 @@ public class TC39_Shop08_ReadMoreFunctionality {
         Assert.assertTrue(shopPage.androidQickStartQideShop.isDisplayed());
         basketPage.removeProductButtonBasket.click();
         Assert.assertTrue(basketPage.textEmptyBasket.isDisplayed());
+        Driver.closeDriver();
     }
 }

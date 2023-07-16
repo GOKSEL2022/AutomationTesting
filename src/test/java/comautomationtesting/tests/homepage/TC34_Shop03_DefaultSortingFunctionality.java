@@ -28,5 +28,7 @@ public class TC34_Shop03_DefaultSortingFunctionality {
         Select select =new Select(shopPage.defaultSortingDropDownShop);
         select.selectByVisibleText("Sort by popularity");
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("orderby=popularity"));
+
+        Driver.closeDriver();
     }
 }

@@ -29,6 +29,7 @@ public class TC21_Login03_CorretUsernameAndEmptyPassword {
         myAccountPage.loginButtonLoginMyAccount.click();
         //7) Proper error must be displayed(ie Invalid password) and prompt to enter login again
         Assert.assertTrue(myAccountPage.textErrorEmptyMessageMyAccount.getText().contains("empty"));
+        Driver.closeDriver();
 
     }
 }
