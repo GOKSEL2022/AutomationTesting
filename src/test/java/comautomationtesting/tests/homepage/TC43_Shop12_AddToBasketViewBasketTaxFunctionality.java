@@ -13,7 +13,6 @@ public class TC43_Shop12_AddToBasketViewBasketTaxFunctionality {
     Homepage homepage = new Homepage();
     ShopPage shopPage=new ShopPage();
     BasketPage basketPage=new BasketPage();
-    ProductPage productPage=new ProductPage();
     CheckoutPage checkoutPage=new CheckoutPage();
     @Test
     public void AddToBasketViewBasketTaxFunctionality() throws InterruptedException {
@@ -59,6 +58,8 @@ public class TC43_Shop12_AddToBasketViewBasketTaxFunctionality {
 
        Assert.assertTrue(2/100==yeniTax/yeniSubtotal);
        Assert.assertEquals(2/100,yeniTax/yeniSubtotal);
+
+        Driver.closeDriver();
 
     }
 }

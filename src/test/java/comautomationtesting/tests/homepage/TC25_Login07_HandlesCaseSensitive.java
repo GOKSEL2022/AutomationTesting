@@ -30,6 +30,7 @@ public class TC25_Login07_HandlesCaseSensitive {
         myAccountPage.loginButtonLoginMyAccount.click();
         //7) Login must fail saying incorrect username/password.
         Assert.assertTrue(myAccountPage.textErrorMessageMyAccount.getText().contains(" A user could not be found with this email address."));
+        Driver.closeDriver();
 
     }
 }

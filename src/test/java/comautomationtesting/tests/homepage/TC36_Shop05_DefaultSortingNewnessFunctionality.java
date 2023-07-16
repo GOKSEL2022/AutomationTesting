@@ -28,5 +28,6 @@ public class TC36_Shop05_DefaultSortingNewnessFunctionality {
         select.selectByVisibleText("Sort by newness");
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("orderby=date"));
 
+        Driver.closeDriver();
     }
 }

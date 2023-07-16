@@ -29,6 +29,7 @@ public class TC30_Registration04_EmptyPassword {
         myAccountPage.registerButtonMyAccount.click();
         //7) Registration must fail with a warning message(ie please enter an account password)
         Assert.assertTrue(myAccountPage.registerButtonMyAccount.isDisplayed());
+        Driver.closeDriver();
 
 
     }

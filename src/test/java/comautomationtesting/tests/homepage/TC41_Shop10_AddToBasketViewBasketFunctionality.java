@@ -74,5 +74,6 @@ public class TC41_Shop10_AddToBasketViewBasketFunctionality {
         //13) On clicking place order button user completes his process where the page navigates to Order confirmation page with order details,bank details,customer details and billing details.
         Assert.assertTrue(checkoutPage.textOrderDetailsCheckout.isDisplayed());
         Assert.assertTrue(checkoutPage.textOurBankDetailsCheckout.isDisplayed());
+        Driver.closeDriver();
     }
 }

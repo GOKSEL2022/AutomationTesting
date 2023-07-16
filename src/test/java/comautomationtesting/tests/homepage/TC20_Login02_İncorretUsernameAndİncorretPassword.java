@@ -32,6 +32,7 @@ public class TC20_Login02_İncorretUsernameAndİncorretPassword {
         myAccountPage.loginButtonLoginMyAccount.click();
         //7) Proper error must be displayed(ie Invalid username) and prompt to enter login again
         Assert.assertTrue(myAccountPage.textErrorMessageMyAccount.getText().contains("A user could not be found with this email address."));
+        Driver.closeDriver();
 
     }
 }

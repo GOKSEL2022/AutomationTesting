@@ -29,5 +29,6 @@ public class TC22_Login04_EmptyUsernameAndValidPassword {
         myAccountPage.loginButtonLoginMyAccount.click();
         //7) Proper error must be displayed(ie Invalid username) and prompt to enter login again
         Assert.assertTrue(myAccountPage.textErrorMessageMyAccount.getText().contains(" Username is required."));
+        Driver.closeDriver();
     }
 }

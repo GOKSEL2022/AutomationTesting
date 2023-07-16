@@ -119,6 +119,7 @@ public class TC18_BasketItemsCheckoutPaymentGatewayPlaceOrder {
         //with order details,bank details,customer details and billing details.
         Assert.assertTrue(checkoutPage.textOrderDetailsCheckout.isDisplayed());
         Assert.assertTrue(checkoutPage.textOurBankDetailsCheckout.isDisplayed());
+        Driver.closeDriver();
 
     }
 }

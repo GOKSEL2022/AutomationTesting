@@ -30,5 +30,6 @@ public class TC29_Registration03_EmptyEmailId {
         myAccountPage.registerButtonMyAccount.click();
         //7) Registration must fail with a warning message(ie please provide valid email address)
         Assert.assertTrue(myAccountPage.textErrorMessageMyAccount.getText().contains(" Please provide a valid email address."));
+        Driver.closeDriver();
     }
 }
