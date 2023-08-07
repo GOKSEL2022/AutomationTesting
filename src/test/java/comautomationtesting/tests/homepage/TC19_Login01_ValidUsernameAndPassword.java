@@ -9,7 +9,7 @@ import comautomationtesting.utilities.ReusableMethods;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC019_Login01_ValidUsernameAndPassword {
+public class TC19_Login01_ValidUsernameAndPassword {
     Homepage homepage = new Homepage();
     MyAccountPage myAccountPage = new MyAccountPage();
     Faker faker = new Faker();
