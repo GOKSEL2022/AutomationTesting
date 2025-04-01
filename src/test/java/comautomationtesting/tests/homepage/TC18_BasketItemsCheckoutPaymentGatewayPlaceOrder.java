@@ -4,7 +4,7 @@ package comautomationtesting.tests.homepage;
 import com.github.javafaker.Faker;
 import comautomationtesting.pages.BasketPage;
 import comautomationtesting.pages.CheckoutPage;
-import comautomationtesting.pages.Homepage;
+import comautomationtesting.pages.HomePage;
 import comautomationtesting.pages.ProductPage;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 public class TC18_BasketItemsCheckoutPaymentGatewayPlaceOrder {
     @Test
     public void BasketItemsCheckoutPaymentGatewayPlaceOrder() throws InterruptedException {
-        Homepage homepage = new Homepage();
+        HomePage homepage = new HomePage();
         ProductPage productPage = new ProductPage();
         BasketPage basketPage = new BasketPage();
         CheckoutPage checkoutPage=new CheckoutPage();

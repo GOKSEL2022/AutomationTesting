@@ -1,7 +1,7 @@
 package comautomationtesting.tests.homepage;
 
 import com.github.javafaker.Faker;
-import comautomationtesting.pages.Homepage;
+import comautomationtesting.pages.HomePage;
 import comautomationtesting.pages.MyAccountPage;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC20_Login02_İncorretUsernameAndİncorretPassword {
-    Homepage homepage = new Homepage();
+    HomePage homepage = new HomePage();
     MyAccountPage myAccountPage = new MyAccountPage();
     Faker faker = new Faker();
     @Test

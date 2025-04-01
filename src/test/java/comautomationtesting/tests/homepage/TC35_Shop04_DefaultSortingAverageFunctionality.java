@@ -1,6 +1,6 @@
 package comautomationtesting.tests.homepage;
 
-import comautomationtesting.pages.Homepage;
+import comautomationtesting.pages.HomePage;
 import comautomationtesting.pages.ShopPage;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC35_Shop04_DefaultSortingAverageFunctionality {
-    Homepage homepage = new Homepage();
+    HomePage homepage = new HomePage();
     ShopPage shopPage=new ShopPage();
     @Test
     public void DefaultSortingAverageFunctionality() {

@@ -1,20 +1,17 @@
 package comautomationtesting.tests.homepage;
 
-import comautomationtesting.pages.Homepage;
+import comautomationtesting.pages.HomePage;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
 import comautomationtesting.utilities.ReusableMethods;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import java.util.List;
-
 public class TC02_ThreeArriwalsOnly {
     @Test
     public void ThreeArriwalsOnly() {
-        Homepage homepage=new Homepage();
+        HomePage homepage=new HomePage();
 
         //1) Open the browser
         //2) Enter the URL “http://practice.automationtesting.in/”

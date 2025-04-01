@@ -7,11 +7,10 @@ import comautomationtesting.utilities.Driver;
 import comautomationtesting.utilities.ReusableMethods;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
-import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 public class TC41_Shop10_AddToBasketViewBasketFunctionality {
-    Homepage homepage = new Homepage();
+    HomePage homepage = new HomePage();
     ShopPage shopPage=new ShopPage();
     BasketPage basketPage=new BasketPage();
     ProductPage productPage=new ProductPage();

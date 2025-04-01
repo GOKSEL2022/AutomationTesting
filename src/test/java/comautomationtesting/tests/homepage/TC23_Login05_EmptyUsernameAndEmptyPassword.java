@@ -1,6 +1,6 @@
 package comautomationtesting.tests.homepage;
 
-import comautomationtesting.pages.Homepage;
+import comautomationtesting.pages.HomePage;
 import comautomationtesting.pages.MyAccountPage;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC23_Login05_EmptyUsernameAndEmptyPassword {
-    Homepage homepage = new Homepage();
+    HomePage homepage = new HomePage();
     MyAccountPage myAccountPage = new MyAccountPage();
     @Test
     public void EmptyUsernameAndEmptyPassword() {

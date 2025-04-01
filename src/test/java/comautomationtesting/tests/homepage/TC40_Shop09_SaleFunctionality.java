@@ -1,7 +1,7 @@
 package comautomationtesting.tests.homepage;
 
 import comautomationtesting.pages.BasketPage;
-import comautomationtesting.pages.Homepage;
+import comautomationtesting.pages.HomePage;
 import comautomationtesting.pages.ProductPage;
 import comautomationtesting.pages.ShopPage;
 import comautomationtesting.utilities.ConfigurationReader;
@@ -11,7 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC40_Shop09_SaleFunctionality {
-    Homepage homepage = new Homepage();
+    HomePage homepage = new HomePage();
     ShopPage shopPage=new ShopPage();
     BasketPage basketPage=new BasketPage();
     ProductPage productPage=new ProductPage();

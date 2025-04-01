@@ -5,6 +5,14 @@ public class AllPages {
     }
     private BasketPage basketPage;
     private CheckoutPage checkoutPage;
+    private HomePage homePage;
+
+    public HomePage homePage() {
+        if (homePage == null) {
+            homePage = new HomePage();
+        }
+        return homePage;
+    }
 
     public CheckoutPage checkoutPage() {
         if (checkoutPage == null) {

@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class TC48_MyAccount05_AddressFunctionality {
-    Homepage homepage=new Homepage();
+    HomePage homepage=new HomePage();
     MyAccountPage myAccountPage=new MyAccountPage();
     @Test
     public void AddressFunctionality() {

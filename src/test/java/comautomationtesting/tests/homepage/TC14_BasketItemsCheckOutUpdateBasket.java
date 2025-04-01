@@ -1,12 +1,11 @@
 package comautomationtesting.tests.homepage;
 
 import comautomationtesting.pages.BasketPage;
-import comautomationtesting.pages.Homepage;
+import comautomationtesting.pages.HomePage;
 import comautomationtesting.pages.ProductPage;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
 import comautomationtesting.utilities.ReusableMethods;
-import org.apache.commons.math3.analysis.solvers.FieldBracketingNthOrderBrentSolver;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -15,7 +14,7 @@ import org.testng.annotations.Test;
 public class TC14_BasketItemsCheckOutUpdateBasket {
     @Test
     public void BasketItemsCheckOutUpdateBasket() {
-        Homepage homepage = new Homepage();
+        HomePage homepage = new HomePage();
         ProductPage productPage = new ProductPage();
         BasketPage basketPage = new BasketPage();
 

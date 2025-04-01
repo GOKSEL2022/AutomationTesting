@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC42_Shop11_AddToBasketThroughItemLink {
-    Homepage homepage = new Homepage();
+    HomePage homepage = new HomePage();
     ShopPage shopPage=new ShopPage();
     BasketPage basketPage=new BasketPage();
     CheckoutPage checkoutPage=new CheckoutPage();

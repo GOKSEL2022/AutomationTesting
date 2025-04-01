@@ -3,13 +3,12 @@ package comautomationtesting.tests.homepage;
 import com.github.javafaker.Faker;
 import comautomationtesting.pages.BasketPage;
 import comautomationtesting.pages.CheckoutPage;
-import comautomationtesting.pages.Homepage;
+import comautomationtesting.pages.HomePage;
 import comautomationtesting.pages.ProductPage;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
 import comautomationtesting.utilities.ReusableMethods;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -17,7 +16,7 @@ import org.testng.annotations.Test;
 public class TC17_AddToBasketItemsCheckoutPaymentGateway {
     @Test
     public void AddToBasketItemsCheckoutPaymentGateway() throws InterruptedException {
-        Homepage homepage = new Homepage();
+        HomePage homepage = new HomePage();
         ProductPage productPage = new ProductPage();
         BasketPage basketPage = new BasketPage();
         CheckoutPage checkoutPage=new CheckoutPage();
