@@ -1,6 +1,6 @@
 package comautomationtesting.tests.homepage;
 
-import comautomationtesting.pages.Homepage;
+import comautomationtesting.pages.HomePage;
 import comautomationtesting.pages.MyAccountPage;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class TC24_Login06_PasswordShouldBeMasked {
-    Homepage homepage=new Homepage();
+    HomePage homepage=new HomePage();
     MyAccountPage myAccountPage=new MyAccountPage();
 
     @Test

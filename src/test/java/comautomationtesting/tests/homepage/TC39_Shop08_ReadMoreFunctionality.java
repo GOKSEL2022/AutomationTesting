@@ -1,7 +1,7 @@
 package comautomationtesting.tests.homepage;
 
 import comautomationtesting.pages.BasketPage;
-import comautomationtesting.pages.Homepage;
+import comautomationtesting.pages.HomePage;
 import comautomationtesting.pages.ShopPage;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC39_Shop08_ReadMoreFunctionality {
-    Homepage homepage = new Homepage();
+    HomePage homepage = new HomePage();
     ShopPage shopPage=new ShopPage();
     BasketPage basketPage=new BasketPage();
     @Test

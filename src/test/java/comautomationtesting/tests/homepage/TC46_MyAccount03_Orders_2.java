@@ -1,16 +1,14 @@
 package comautomationtesting.tests.homepage;
 
-import com.github.javafaker.Faker;
 import comautomationtesting.pages.*;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
 import comautomationtesting.utilities.ReusableMethods;
-import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC46_MyAccount03_Orders_2 {
-    Homepage homepage=new Homepage();
+    HomePage homepage=new HomePage();
     MyAccountPage myAccountPage=new MyAccountPage();
     @Test
     public void MyAccount03_Orders_2() throws InterruptedException {

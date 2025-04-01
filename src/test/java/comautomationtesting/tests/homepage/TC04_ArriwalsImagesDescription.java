@@ -1,7 +1,7 @@
 package comautomationtesting.tests.homepage;
 
 import comautomationtesting.pages.BasketPage;
-import comautomationtesting.pages.Homepage;
+import comautomationtesting.pages.HomePage;
 import comautomationtesting.pages.ProductPage;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
@@ -14,7 +14,7 @@ public class TC04_ArriwalsImagesDescription {
     @Test
     public void ArriwalsImagesDescription() {
 
-        Homepage homepage = new Homepage();
+        HomePage homepage = new HomePage();
         ProductPage productPage = new ProductPage();
         BasketPage basketPage = new BasketPage();
 

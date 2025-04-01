@@ -1,7 +1,7 @@
 package comautomationtesting.tests.homepage;
 
 import comautomationtesting.pages.BasketPage;
-import comautomationtesting.pages.Homepage;
+import comautomationtesting.pages.HomePage;
 import comautomationtesting.pages.ProductPage;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 public class TC03_ArriwalsShouldNavigate {
     @Test
     public void TC03_ArriwalsShouldNavigate() {
-        Homepage homepage=new Homepage();
+        HomePage homepage=new HomePage();
         ProductPage productPage=new ProductPage();
         BasketPage basketPage=new BasketPage();
 

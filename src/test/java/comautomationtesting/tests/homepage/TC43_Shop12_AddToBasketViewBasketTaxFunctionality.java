@@ -5,12 +5,11 @@ import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
 import comautomationtesting.utilities.ReusableMethods;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC43_Shop12_AddToBasketViewBasketTaxFunctionality {
-    Homepage homepage = new Homepage();
+    HomePage homepage = new HomePage();
     ShopPage shopPage=new ShopPage();
     BasketPage basketPage=new BasketPage();
     CheckoutPage checkoutPage=new CheckoutPage();

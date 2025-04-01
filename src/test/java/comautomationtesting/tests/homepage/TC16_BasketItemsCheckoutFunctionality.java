@@ -2,7 +2,7 @@ package comautomationtesting.tests.homepage;
 
 import comautomationtesting.pages.BasketPage;
 import comautomationtesting.pages.CheckoutPage;
-import comautomationtesting.pages.Homepage;
+import comautomationtesting.pages.HomePage;
 import comautomationtesting.pages.ProductPage;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 public class TC16_BasketItemsCheckoutFunctionality {
     @Test
     public void testName() {
-        Homepage homepage = new Homepage();
+        HomePage homepage = new HomePage();
         ProductPage productPage = new ProductPage();
         BasketPage basketPage = new BasketPage();
         CheckoutPage checkoutPage=new CheckoutPage();

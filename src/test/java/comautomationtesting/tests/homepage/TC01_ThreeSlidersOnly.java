@@ -1,5 +1,5 @@
 package comautomationtesting.tests.homepage;
-import comautomationtesting.pages.Homepage;
+import comautomationtesting.pages.HomePage;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
 import org.testng.Reporter;
@@ -12,7 +12,7 @@ public final class TC01_ThreeSlidersOnly {
     @Test
     public void ThreeSlidersOnlyTest() {
 
-        Homepage homepage = new Homepage();
+        HomePage homepage = new HomePage();
         //1) Open the browser
         //2) Enter the URL “http://practice.automationtesting.in/”
         Driver.getDriver().get(ConfigurationReader.getProperty("au_url"));
