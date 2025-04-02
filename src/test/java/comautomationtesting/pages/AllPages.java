@@ -6,6 +6,28 @@ public class AllPages {
     private BasketPage basketPage;
     private CheckoutPage checkoutPage;
     private HomePage homePage;
+    private MyAccountPage myAccountPage;
+    private ProductPage productPage;
+    private ShopPage shopPage;
+    public ShopPage shopPage() {
+        if (shopPage == null) {
+            shopPage = new ShopPage();
+        }
+        return shopPage;
+    }
+    public ProductPage productPage() {
+        if (productPage == null) {
+            productPage = new ProductPage();
+        }
+        return productPage;
+    }
+
+    public MyAccountPage myAccountPage() {
+        if (myAccountPage == null) {
+            myAccountPage = new MyAccountPage();
+        }
+        return myAccountPage;
+    }
 
     public HomePage homePage() {
         if (homePage == null) {
