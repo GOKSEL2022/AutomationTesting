@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 import static comautomationtesting.utilities.ReusableMethods.clickWithJS;
 import static comautomationtesting.utilities.ReusableMethods.waitAndClick;
 import static org.testng.AssertJUnit.assertEquals;
-
 public final class TC01_ThreeSlidersOnly {
     @Test
     public void ThreeSlidersOnlyTest() {
@@ -21,18 +20,13 @@ public final class TC01_ThreeSlidersOnly {
         Driver.getDriver().navigate().refresh();
         waitAndClick(allPages.homePage().shopButton);
         Driver.getDriver().navigate().back();
-
         //5) Test whether the Home page has Three Sliders only
         assertEquals(3,allPages.homePage().threeSlidersHome.size());
         //ReusableMethods.scrollIntoViewJS(homepage.threeSliders);
         //assert homepage.threeSliders.isDisplayed();
-
         //6) The Home page must contains only three sliders
         assertEquals(allPages.homePage().arriwals.size(), 3);
         Reporter.log("Sayfada sadece 3 urun oldugu dogrulanir");
-
         //Driver.closeDriver();
-
-
     }
 }
