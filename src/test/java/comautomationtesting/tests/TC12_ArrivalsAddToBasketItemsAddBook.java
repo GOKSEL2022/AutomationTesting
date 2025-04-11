@@ -67,6 +67,5 @@ public class TC12_ArrivalsAddToBasketItemsAddBook {
         assert allPages.basketPage().textBasketUpdateBasket.isDisplayed();
         Reporter.log("Kullanici basket update yazisini goruntuler");
         Driver.closeDriver();
-
     }
 }
