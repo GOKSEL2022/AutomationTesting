@@ -1,19 +1,17 @@
 package comautomationtesting.tests;
-
 import com.github.javafaker.Faker;
-import comautomationtesting.pages.HomePage;
-import comautomationtesting.pages.MyAccountPage;
+import comautomationtesting.pages.AllPages;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
 import comautomationtesting.utilities.ReusableMethods;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC19_Login01_ValidUsernameAndPassword {
-    HomePage homepage = new HomePage();
-    MyAccountPage myAccountPage = new MyAccountPage();
-    Faker faker = new Faker();
+import static comautomationtesting.utilities.ReusableMethods.clickWithJS;
 
+public class TC19_Login01_ValidUsernameAndPassword {
+    AllPages allPages=new AllPages();
+    Faker faker = new Faker();
     @Test(priority = 1)
     public void ValidUsernameAndPassword() throws InterruptedException {
         String email = Faker.instance().internet().emailAddress();
@@ -22,42 +20,39 @@ public class TC19_Login01_ValidUsernameAndPassword {
         //2) Enter the URL “http://practice.automationtesting.in/”
         Driver.getDriver().get(ConfigurationReader.getProperty("au_url"));
         //3) Click on My Account Menu
-        homepage.myAccountButtonHome.click();
+        allPages.homePage().myAccountButtonHome.click();
         Driver.getDriver().navigate().refresh();
-        homepage.myAccountButtonHome.click();
+        allPages.homePage().myAccountButtonHome.click();
         //4) Enter registered username in username textbox
-        myAccountPage.textBoxEmailRegisterMyAccount.sendKeys(email);
+        allPages.myAccountPage().textBoxEmailRegisterMyAccount.sendKeys(email);
         //5) Enter password in password textbox
-        myAccountPage.textBoxPasswordRegisterMyAccount.sendKeys(password);
-        myAccountPage.registerButtonMyAccount.click();
+        allPages.myAccountPage().textBoxPasswordRegisterMyAccount.sendKeys(password);
+        allPages.myAccountPage().registerButtonMyAccount.click();
         //7) User must successfully login to the web page
-        Assert.assertTrue(myAccountPage.signOutButtonMyAccount.isDisplayed());
+        assert allPages.myAccountPage().signOutButtonMyAccount.isDisplayed();
         //ReusableMethods.clickWithJS(myAccountPage.signOutButtonMyAccount);
         Driver.closeDriver();
         }
-
     @Test(priority = 2)
     public void Login() {
         //1) Open the browser
         //2) Enter the URL “http://practice.automationtesting.in/”
         Driver.getDriver().get(ConfigurationReader.getProperty("au_url"));
         //3) Click on My Account Menu
-        ReusableMethods.clickWithJS(homepage.myAccountButtonHome);
+        clickWithJS(allPages.homePage().myAccountButtonHome);
         Driver.getDriver().navigate().refresh();
-        homepage.myAccountButtonHome.click();
+        allPages.homePage().myAccountButtonHome.click();
         //4) Enter registered username in username textbox
         //5) Enter password in password textbox
-        myAccountPage.textBoxUsernameLoginMyAccount.sendKeys("goksel5255@gmail.com");
-        myAccountPage.textBoxPasswordLoginMyAccount.sendKeys("goksel123++");
+        allPages.myAccountPage().textBoxUsernameLoginMyAccount.sendKeys("goksel5255@gmail.com");
+        allPages.myAccountPage().textBoxPasswordLoginMyAccount.sendKeys("goksel123++");
         //6) Click on login button
-        myAccountPage.loginButtonLoginMyAccount.click();
+        allPages.myAccountPage().loginButtonLoginMyAccount.click();
         //7) User must successfully login to the web page
-        Assert.assertTrue(myAccountPage.signOutButtonMyAccount.isDisplayed());
-        ReusableMethods.clickWithJS(myAccountPage.signOutButtonMyAccount);
+        Assert.assertTrue(allPages.myAccountPage().signOutButtonMyAccount.isDisplayed());
+        clickWithJS(allPages.myAccountPage().signOutButtonMyAccount);
         Driver.closeDriver();
-
     }
-
 }
 
 
