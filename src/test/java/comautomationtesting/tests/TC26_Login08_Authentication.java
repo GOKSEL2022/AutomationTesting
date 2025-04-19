@@ -1,37 +1,32 @@
 package comautomationtesting.tests;
-
-import comautomationtesting.pages.HomePage;
-import comautomationtesting.pages.MyAccountPage;
+import comautomationtesting.pages.AllPages;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
-import comautomationtesting.utilities.ReusableMethods;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-
+import static comautomationtesting.utilities.ReusableMethods.clickWithJS;
 public class TC26_Login08_Authentication {
-    HomePage homepage=new HomePage();
-    MyAccountPage myAccountPage=new MyAccountPage();
+    AllPages allPages=new AllPages();
     @Test
     public void Authentication() {
         //1) Open the browser
         //2) Enter the URL “http://practice.automationtesting.in/”
         Driver.getDriver().get(ConfigurationReader.getProperty("au_url"));
         //3) Click on My Account Menu
-        ReusableMethods.clickWithJS(homepage.myAccountButtonHome);
+        clickWithJS(allPages.homePage().myAccountButtonHome);
         Driver.getDriver().navigate().refresh();
-        homepage.myAccountButtonHome.click();
+        allPages.homePage().myAccountButtonHome.click();
         //4) Enter the case changed username in username textbox
-        myAccountPage.textBoxUsernameLoginMyAccount.sendKeys(ConfigurationReader.getProperty("email"));
+        allPages.myAccountPage().textBoxUsernameLoginMyAccount.sendKeys(ConfigurationReader.getProperty("email"));
         //5) Enter the case chenged password in the password tetxbox
-        myAccountPage.textBoxPasswordLoginMyAccount.sendKeys(ConfigurationReader.getProperty("password"));
+        allPages.myAccountPage().textBoxPasswordLoginMyAccount.sendKeys(ConfigurationReader.getProperty("password"));
         //6) Now click on login button
-        myAccountPage.loginButtonLoginMyAccount.click();
+        allPages.myAccountPage().loginButtonLoginMyAccount.click();
         //7) Once your are logged in, sign out of the site
-        myAccountPage.signOutButtonMyAccount.click();
+        allPages.myAccountPage().signOutButtonMyAccount.click();
         //8) Now press back button
         Driver.getDriver().navigate().back();
         //9) User shouldn’t be signed in to his account rather a general webpage must be visible
-        Assert.assertTrue(myAccountPage.textBoxUsernameLoginMyAccount.isDisplayed());
+        assert allPages.myAccountPage().textBoxUsernameLoginMyAccount.isDisplayed();
         Driver.closeDriver();
     }
 }
