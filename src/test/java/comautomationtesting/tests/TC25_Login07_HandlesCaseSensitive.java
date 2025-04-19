@@ -1,36 +1,29 @@
 package comautomationtesting.tests;
-
 import com.github.javafaker.Faker;
-import comautomationtesting.pages.HomePage;
-import comautomationtesting.pages.MyAccountPage;
+import comautomationtesting.pages.AllPages;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
 import comautomationtesting.utilities.ReusableMethods;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-
 public class TC25_Login07_HandlesCaseSensitive {
-    HomePage homepage=new HomePage();
-    MyAccountPage myAccountPage=new MyAccountPage();
-
+    AllPages allPages=new AllPages();
     @Test
     public void HandlesCaseSensitive() {
         //1) Open the browser
         //2) Enter the URL “http://practice.automationtesting.in/”
         Driver.getDriver().get(ConfigurationReader.getProperty("au_url"));
         //3) Click on My Account Menu
-        ReusableMethods.clickWithJS(homepage.myAccountButtonHome);
+        ReusableMethods.clickWithJS(allPages.homePage().myAccountButtonHome);
         Driver.getDriver().navigate().refresh();
-        homepage.myAccountButtonHome.click();
+        allPages.homePage().myAccountButtonHome.click();
         //4) Enter the case changed username in username textbox
-        myAccountPage.textBoxUsernameLoginMyAccount.sendKeys(Faker.instance().internet().emailAddress());
+        allPages.myAccountPage().textBoxUsernameLoginMyAccount.sendKeys(Faker.instance().internet().emailAddress());
         //5) Enter the case chenged password in the password tetxbox
-        myAccountPage.textBoxPasswordLoginMyAccount.sendKeys(Faker.instance().internet().emailAddress());
+        allPages.myAccountPage().textBoxPasswordLoginMyAccount.sendKeys(Faker.instance().internet().emailAddress());
         //6) Now click on login button
-        myAccountPage.loginButtonLoginMyAccount.click();
+        allPages.myAccountPage().loginButtonLoginMyAccount.click();
         //7) Login must fail saying incorrect username/password.
-        Assert.assertTrue(myAccountPage.textErrorMessageMyAccount.getText().contains(" A user could not be found with this email address."));
+        assert allPages.myAccountPage().textErrorMessageMyAccount.getText().contains(" A user could not be found with this email address.");
         Driver.closeDriver();
-
     }
 }

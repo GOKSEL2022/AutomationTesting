@@ -3,7 +3,6 @@ import comautomationtesting.pages.AllPages;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
 import org.openqa.selenium.Keys;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import static comautomationtesting.utilities.ReusableMethods.clickWithJS;
 public class TC23_Login05_EmptyUsernameAndEmptyPassword {
