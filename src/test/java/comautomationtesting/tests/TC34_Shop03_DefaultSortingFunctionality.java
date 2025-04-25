@@ -1,34 +1,26 @@
 package comautomationtesting.tests;
-
-import comautomationtesting.pages.HomePage;
-import comautomationtesting.pages.ShopPage;
+import comautomationtesting.pages.AllPages;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
-import comautomationtesting.utilities.ReusableMethods;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-
+import static comautomationtesting.utilities.ReusableMethods.clickWithJS;
 public class TC34_Shop03_DefaultSortingFunctionality {
-    HomePage homepage = new HomePage();
-    ShopPage shopPage=new ShopPage();
+    AllPages allPages=new AllPages();
     @Test
     public void Shop03DefaultSortingFunctionality() {
-
         //1) Open the browser
         //2) Enter the URL “http://practice.automationtesting.in/”
         Driver.getDriver().get(ConfigurationReader.getProperty("au_url"));
         //3) Click on Shop Menu
-        ReusableMethods.clickWithJS(homepage.shopButton);
+        clickWithJS(allPages.homePage().shopButton);
         Driver.getDriver().navigate().refresh();
-        ReusableMethods.clickWithJS(homepage.shopButton);
+        clickWithJS(allPages.homePage().shopButton);
         //4) Click on Sort by Popularity item in Default sorting dropdown
-        shopPage.defaultSortingDropDownShop.click();
+        allPages.shopPage().defaultSortingDropDownShop.click();
         //5) Now user can view the popular products only
-        Select select =new Select(shopPage.defaultSortingDropDownShop);
-        select.selectByVisibleText("Sort by popularity");
-        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("orderby=popularity"));
-
+        new Select(allPages.shopPage().defaultSortingDropDownShop).selectByVisibleText("Sort by popularity");;
+        assert Driver.getDriver().getCurrentUrl().contains("orderby=popularity");
         Driver.closeDriver();
     }
 }
