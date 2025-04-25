@@ -19,7 +19,7 @@ public class TC34_Shop03_DefaultSortingFunctionality {
         //4) Click on Sort by Popularity item in Default sorting dropdown
         allPages.shopPage().defaultSortingDropDownShop.click();
         //5) Now user can view the popular products only
-        new Select(allPages.shopPage().defaultSortingDropDownShop).selectByVisibleText("Sort by popularity");;
+        new Select(allPages.shopPage().defaultSortingDropDownShop).selectByVisibleText("Sort by popularity");
         assert Driver.getDriver().getCurrentUrl().contains("orderby=popularity");
         Driver.closeDriver();
     }
