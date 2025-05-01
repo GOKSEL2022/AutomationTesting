@@ -1,78 +1,72 @@
 package comautomationtesting.tests;
-
 import com.github.javafaker.Faker;
 import comautomationtesting.pages.*;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
-import comautomationtesting.utilities.ReusableMethods;
 import org.openqa.selenium.Keys;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-
+import static comautomationtesting.utilities.ReusableMethods.clickWithJS;
+import static comautomationtesting.utilities.ReusableMethods.scrollIntoViewJS;
 public class TC41_Shop10_AddToBasketViewBasketFunctionality {
-    HomePage homepage = new HomePage();
-    ShopPage shopPage=new ShopPage();
-    BasketPage basketPage=new BasketPage();
-    ProductPage productPage=new ProductPage();
-    CheckoutPage checkoutPage=new CheckoutPage();
+    AllPages allPages=new AllPages();
     @Test
     public void AddToBasketViewBasketFunctionality() throws InterruptedException {
         //1) Open the browser
         //2) Enter the URL “http://practice.automationtesting.in/”
         Driver.getDriver().get(ConfigurationReader.getProperty("au_url"));
         //3) Click on Shop Menu
-        ReusableMethods.clickWithJS(homepage.shopButton);
+        clickWithJS(allPages.homePage().shopButton);
         Driver.getDriver().navigate().refresh();
-        ReusableMethods.clickWithJS(homepage.shopButton);
+        clickWithJS(allPages.homePage().shopButton);
         //4) Click on the Add To Basket button which adds that book to your basket
-        shopPage.addToBasketButtonAndroidQickStartShop.click();
+        allPages.shopPage().addToBasketButtonAndroidQickStartShop.click();
         //5) User can view that Book in the Menu item with price .
-        assert shopPage.textPriceShop.isDisplayed();
+        assert allPages.shopPage().textPriceShop.isDisplayed();
         //6) Now click on View Basket link which navigates to proceed to check out page.
-        shopPage.vievBasketButtonAndroidQickStartShop.click();
+        allPages.shopPage().vievBasketButtonAndroidQickStartShop.click();
         //7) Now user can find total and subtotal values just above the Proceed to Checkout button.
-        assert basketPage.subtotalPriceBasket.isDisplayed();
-        assert basketPage.totalPriceBasket.isDisplayed();
+        assert allPages.basketPage().subtotalPriceBasket.isDisplayed();
+        assert allPages.basketPage().totalPriceBasket.isDisplayed();
         //8) The total always < subtotal because taxes are added in the subtotal
-        String subTotal=basketPage.subtotalPriceBasket.getText();
+        String subTotal=allPages.basketPage().subtotalPriceBasket.getText();
         subTotal=subTotal.replaceAll("\\D","");
-        String total=basketPage.totalPriceBasket.getText();
+        String total=allPages.basketPage().totalPriceBasket.getText();
         total=total.replaceAll("\\D","");
         int totalInt=Integer.parseInt(total);
         int subtotalInt=Integer.parseInt(subTotal);
-        Assert.assertTrue(totalInt>subtotalInt);
+        assert totalInt > subtotalInt;
         //9) Now click on Proceed to Check out button which navigates to payment gateway page.
-        basketPage.proceedToCheckoutButtonBasket.click();
+        allPages.basketPage().proceedToCheckoutButtonBasket.click();
         //10) User can view Billing Details,Order Details,Additional details and Payment gateway details.
-        Assert.assertTrue(checkoutPage.textBillingDetailsCheckout.isDisplayed());
-        Assert.assertTrue(checkoutPage.textAdditionalInformationCheckout.isDisplayed());
-        Assert.assertTrue(checkoutPage.textYourOrderCheckout.isDisplayed());
-        Assert.assertTrue(checkoutPage.textTotalCheckout.isDisplayed());
+        assert allPages.checkoutPage().textBillingDetailsCheckout.isDisplayed();
+        assert allPages.checkoutPage().textAdditionalInformationCheckout.isDisplayed();
+        assert allPages.checkoutPage().textYourOrderCheckout.isDisplayed();
+        assert allPages.checkoutPage().textTotalCheckout.isDisplayed();
         //11) Now user can fill his details in billing details form and can opt any payment in the payment gateway like Direct bank transfer,cheque,cash or paypal.
         //12) Now click on Place Order button to complete process
-        checkoutPage.firstNameCheckout.sendKeys(Faker.instance().name().firstName());
-        Thread.sleep(1000);
-        checkoutPage.lastNameCheckout.sendKeys(Faker.instance().name().lastName());
-        Thread.sleep(1000);
-        checkoutPage.companyNameCheckout.sendKeys(Faker.instance().company().name());
-        Thread.sleep(1000);
-        checkoutPage.emailNameCheckout.sendKeys(Faker.instance().internet().emailAddress());
-        Thread.sleep(1000);
-        checkoutPage.phoneNameCheckout.sendKeys("0452-481-21-66", Keys.TAB,Keys.ARROW_UP,Keys.ARROW_DOWN,Keys.ENTER);
-        Thread.sleep(1000);
-        checkoutPage.address1Checkout.sendKeys(Faker.instance().address().streetAddress());
-        Thread.sleep(1000);
-        checkoutPage.address2Checkout.sendKeys(Faker.instance().address().fullAddress());
-        Thread.sleep(1000);
-        checkoutPage.townCityCheckout.sendKeys(Faker.instance().address().city(),Keys.TAB,Keys.ARROW_UP,Keys.ARROW_DOWN,Keys.ENTER);
-        Thread.sleep(1000);
-        checkoutPage.postcodeCheckout.sendKeys(Faker.instance().address().zipCode());
-        Thread.sleep(1000);
-        ReusableMethods.scrollIntoViewJS(checkoutPage.textBoxAdditionalCheckout);
-        checkoutPage.textBoxAdditionalCheckout.sendKeys(Faker.instance().lorem().paragraph(),Keys.TAB,Keys.TAB,Keys.ENTER);
+        allPages.checkoutPage().firstNameCheckout.sendKeys(Faker.instance().name().firstName());
+        wait(1);
+        allPages.checkoutPage().lastNameCheckout.sendKeys(Faker.instance().name().lastName());
+        wait(1);
+        allPages.checkoutPage().companyNameCheckout.sendKeys(Faker.instance().company().name());
+        wait(1);
+        allPages.checkoutPage().emailNameCheckout.sendKeys(Faker.instance().internet().emailAddress());
+        wait(1);
+        allPages.checkoutPage().phoneNameCheckout.sendKeys("0452-481-21-66", Keys.TAB,Keys.ARROW_UP,Keys.ARROW_DOWN,Keys.ENTER);
+        wait(1);
+        allPages.checkoutPage().address1Checkout.sendKeys(Faker.instance().address().streetAddress());
+        wait(1);
+        allPages.checkoutPage().address2Checkout.sendKeys(Faker.instance().address().fullAddress());
+        wait(1);
+        allPages.checkoutPage().townCityCheckout.sendKeys(Faker.instance().address().city(),Keys.TAB,Keys.ARROW_UP,Keys.ARROW_DOWN,Keys.ENTER);
+        wait(1);
+        allPages.checkoutPage().postcodeCheckout.sendKeys(Faker.instance().address().zipCode());
+        wait(1);
+        scrollIntoViewJS(allPages.checkoutPage().textBoxAdditionalCheckout);
+        allPages.checkoutPage().textBoxAdditionalCheckout.sendKeys(Faker.instance().lorem().paragraph(),Keys.TAB,Keys.TAB,Keys.ENTER);
         //13) On clicking place order button user completes his process where the page navigates to Order confirmation page with order details,bank details,customer details and billing details.
-        Assert.assertTrue(checkoutPage.textOrderDetailsCheckout.isDisplayed());
-        Assert.assertTrue(checkoutPage.textOurBankDetailsCheckout.isDisplayed());
+        assert allPages.checkoutPage().textOrderDetailsCheckout.isDisplayed();
+        assert allPages.checkoutPage().textOurBankDetailsCheckout.isDisplayed();
         Driver.closeDriver();
     }
 }
