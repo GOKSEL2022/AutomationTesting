@@ -1,41 +1,37 @@
 package comautomationtesting.tests;
-
 import comautomationtesting.pages.*;
 import comautomationtesting.utilities.ConfigurationReader;
 import comautomationtesting.utilities.Driver;
-import comautomationtesting.utilities.ReusableMethods;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-
+import static comautomationtesting.utilities.ReusableMethods.clickWithJS;
 public class TC48_MyAccount05_AddressFunctionality {
-    HomePage homepage=new HomePage();
-    MyAccountPage myAccountPage=new MyAccountPage();
+    AllPages allPages=new AllPages();
+    SoftAssert softAssert=new SoftAssert();
     @Test
     public void AddressFunctionality() {
         //1) Open the browser
         //2) Enter the URL “http://practice.automationtesting.in/”
         Driver.getDriver().get(ConfigurationReader.getProperty("au_url"));
         //3) Click on My Account Menu
-        ReusableMethods.clickWithJS(homepage.myAccountButtonHome);
+        clickWithJS(allPages.homePage().myAccountButtonHome);
         Driver.getDriver().navigate().refresh();
-        homepage.myAccountButtonHome.click();
+        allPages.homePage().myAccountButtonHome.click();
         //4) Enter registered username in username textbox
-        myAccountPage.textBoxUsernameLoginMyAccount.sendKeys(ConfigurationReader.getProperty("email"));
+        allPages.myAccountPage().textBoxUsernameLoginMyAccount.sendKeys(ConfigurationReader.getProperty("email"));
         //5) Enter password in password textbox
-        myAccountPage.textBoxPasswordLoginMyAccount.sendKeys(ConfigurationReader.getProperty("password"));
+        allPages.myAccountPage().textBoxPasswordLoginMyAccount.sendKeys(ConfigurationReader.getProperty("password"));
         //6) Click on login button
-        myAccountPage.loginButtonLoginMyAccount.click();
+        allPages.myAccountPage().loginButtonLoginMyAccount.click();
         //7) User must successfully login to the web page
-        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("my-account"));
+        assert Driver.getDriver().getCurrentUrl().contains("my-account");
         //8) Click on Myaccount link which leads to Dashboard
-        ReusableMethods.clickWithJS(homepage.myAccountButtonHome);
+        clickWithJS(allPages.homePage().myAccountButtonHome);
         //9) Click on Address link
-        ReusableMethods.clickWithJS(myAccountPage.addressButtonMyAccount);
+        clickWithJS(allPages.myAccountPage().addressButtonMyAccount);
         //10) User must view billing address and ship address
-        SoftAssert softAssert=new SoftAssert();
-        softAssert.assertTrue(myAccountPage.textBillingAddressMyAccount.isDisplayed());
-        softAssert.assertTrue(myAccountPage.textShippingAddressMyAccount.isDisplayed());
+        softAssert.assertTrue(allPages.myAccountPage().textBillingAddressMyAccount.isDisplayed());
+        softAssert.assertTrue(allPages.myAccountPage().textShippingAddressMyAccount.isDisplayed());
         softAssert.assertAll();
     }
 }
